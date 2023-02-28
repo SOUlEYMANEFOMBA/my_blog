@@ -1,6 +1,6 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
+author: "FOMBA SOULEYMANE"
 date: "2023-02-23"
 categories: [news, code, analysis]
 image: "image.jpg"
@@ -8,6 +8,63 @@ image: "image.jpg"
 
 This is a post with executable code.
 
+
+
 ```{r}
-1 + 1
+#install.packages("quarto","targets")
 ```
+
+```{r}
+##Librairie heron : Ce package permet de calculer l'ai d'un traingle en utilisant la formule héron( la fonction de calcul du package est air_triangle(a,b,c)) pour l'installer depuis mon github il faut utiliser la formule suivante:
+## remote:install_github("SOUlEYMANEFOMBA/heron) le projet doit être public pour pouvoir faire l'installation du package depuis le github.
+```
+
+```{r}
+library(quarto)
+library(targets)
+library(heron)
+```
+
+```{r}
+renv::settings$snapshot.type("all")
+```
+
+```{r}
+renv::snapshot()
+```
+
+```{r}
+targets::tar_make()
+```
+```{r}
+targets::tar_manifest()
+```
+
+```{r}
+targets::tar_visnetwork()
+```
+
+```{r}
+#install.packages("tarchetypes")
+```
+
+```{r}
+#library("tarchetypes")
+```
+
+```{r}
+#tar_quarto("Render")
+```
+
+```{r}
+targets::tar_make()
+```
+
+```{r}
+targets::tar_read("list_triangle")
+```
+
+```{r}
+targets::tar_load("list_triangle")
+```
+
