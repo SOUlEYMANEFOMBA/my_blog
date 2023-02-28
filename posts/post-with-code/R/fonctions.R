@@ -1,8 +1,30 @@
 
+#' milieu d'un segment
+#'
+#' @param a la mesure d'un côte du triangle
+#' @param b la mesure d'un côte du triangle
+#'
+#' @return le milieu d'un segment 
+#' 
+#'
+#' @examples
 divide_milieu_segment=function(a,b){
         return((a+b)/2)
 }
 
+#' diviser un triangle en petit
+#'
+#' @param xa l'abscisse du premier point
+#' @param ya l'ordoner du premier point
+#' @param xb l'abscisse du deuxième un point
+#' @param yb l'ordonner du deuxième point 
+#' @param xc l'abscisse du troisième point 
+#' @param yc l'ordonnee du troisième point
+#'
+#' @return cette fonction retourne une liste de triangle issue de la prémière ittération  Sierpiński
+#' @export
+#'
+#' @examples
 divide_triangle=function(xa,ya,xb,yb,xc,yc){
     xE=divide_milieu_segment(xa,xb);yE=divide_milieu_segment(ya,yb)
     xF=divide_milieu_segment(xb,xc);yF=divide_milieu_segment(yb,yc)
@@ -14,6 +36,14 @@ divide_triangle=function(xa,ya,xb,yb,xc,yc){
     liste=list(triangle2,triangle3,triangle4)
     return(liste)
 }
+
+#' divide liste des triangle
+#'
+#' @param liste l'entrer est une liste de triangle issue de la première ittération de  Sierpiński
+#'
+#' @return retourne une autre liste de triangle après avoir appliquer la fonction divide triangle
+#' 
+#'
 
 divide_list_triangle=function(liste){
   l=list(1:length(liste))
@@ -30,6 +60,19 @@ divide_list_triangle=function(liste){
   #return(liste)
 } 
 
+#' Plot
+#'
+#' @param xa 
+#' @param ya 
+#' @param xb 
+#' @param yb 
+#' @param xc 
+#' @param yc 
+#'
+#' @return retourne le graphique de la première ittération de  Sierpiński
+#' @export
+#'
+#' @examples
 plot_triangle=function(xa,ya,xb,yb,xc,yc){
   
   corner.points = data.frame(x=c(xa, xb, xc),
@@ -61,6 +104,19 @@ plot_triangle=function(xa,ya,xb,yb,xc,yc){
 }
 
 
+#' air 
+#'
+#' @param xa 
+#' @param ya 
+#' @param xb 
+#' @param yb 
+#' @param xc 
+#' @param yc 
+#'
+#' @return l'air d'un triangle après avoir calculer la meseure de chaque côte d'un traingle à l'aide de ses coordonner
+#' @export
+#'
+#' @examples
 air_total_tiangle=function(xa,ya,xb,yb,xc,yc){
     AB=sqrt((xb-xa)^2+(yb-ya)^2)
     BC=sqrt((xc-xb)^2+(yc-yb)^2)
