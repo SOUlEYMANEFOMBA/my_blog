@@ -54,9 +54,9 @@ divide_list_triangle=function(liste){
         print(plot_triangle(xa,ya,xb,yb,xc,yc))
        total_air=total_air +air_total_tiangle(xa,ya,xb,yb,xc,yc)
   }
-  print(total_air)
-  print(l)
-  #liste=list(l,total_air)
+ # print(total_air)
+  #print(l)
+  liste=list(l,total_air)
   #return(liste)
 } 
 
