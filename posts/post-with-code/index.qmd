@@ -49,11 +49,11 @@ targets::tar_visnetwork()
 ```
 
 ```{r}
-#library("tarchetypes")
+library("tarchetypes")
 ```
 
 ```{r}
-#tar_quarto("Render")
+tar_quarto("render")
 ```
 
 ```{r}
